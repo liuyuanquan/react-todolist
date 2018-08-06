@@ -14,11 +14,13 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     if (input.value === '') {
       input.focus()
     } else {
-      dispatch({
+      const action = {
         type: 'ADD_TODO',
         id: nextTodoId++,
         text: input.value
-      })
+      }
+      console.log('dispatching:', action)
+      dispatch(action)
       input.value = ''
     }
   }
